@@ -1,5 +1,5 @@
 # Ejercicios en clase
-
+# Pruebas
 x = "HoLa"
 y = x[::-1] #PYTHON SLICE STRING
 z = x.lower()
@@ -10,6 +10,9 @@ print (len(x))
 
 
 # Crea una funcion que dado una palabra diga si es palindroma o no.
+
+# Python slice   
+# [inicio: final: step] **final no se considera
 def Palindromo(pal):
     pal = pal.lower()
     inv = pal[::-1]
@@ -35,7 +38,7 @@ def devolver(lista = []): #AL ASIGNARLE VALOR = [], PERMITE QUE AL NO DARLE PARA
         print("La longitud es menor que dos")
     return False, False #Asi en la linea 41 se define bien ambas variables
 
-ejemplo = devolver([1]) #EL RETURN CREA UNA TUPLA
+ejemplo = devolver([12,3,4,5,6,7,8,9,"hola"]) #EL RETURN CREA UNA TUPLA
 
 print("tupla =", ejemplo)
 primero,ultimo = ejemplo
@@ -53,14 +56,33 @@ def Diccionario(lista):
     return dic
 print(Diccionario([1,2,3,4,5,6,7,8,9,10]))
 
-def Diccionario(lista):
-    dic = {}
-    minimo = min(lista)
-    dic["Minimo"] = minimo
-    maximo = max(lista)
-    suma = sum(lista)
-    promedio = sum(lista)/len(lista)
-    
+# Otra forma 
+
+def Funcion(lista):
+    minimo = lista[0]
+    maximo = lista[0]
+    suma = 0
+    promedio = 0
+    for i in lista:
+        if i < minimo:
+            minimo = i 
+        if i > maximo:
+            maximo = i
+        suma += i
+    promedio = suma/len(lista)
+    dic = {"Minimo" : minimo, "Maximo": maximo,"Suma": suma, "Promedio": promedio}
     return dic
-print(Diccionario([1,2,3,4,5,6,7,8,9,10]))
+print(Funcion([1,2,3,4,5,6,7,8,9,10]))
+
+#Agregar de apoco a dic
+# def Diccionario(lista):
+#     dic = {}
+#     minimo = min(lista)
+#     dic["Minimo"] = minimo
+#     maximo = max(lista)
+#     suma = sum(lista)
+#     promedio = sum(lista)/len(lista)
+    
+#     return dic
+# print(Diccionario([1,2,3,4,5,6,7,8,9,10]))
 
