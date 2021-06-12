@@ -48,3 +48,22 @@ for x in range(0,highNum+1,mult):
     else:
         print(x)
 
+# BONUS: ¿Cómo se puede detectar si un número es primo? ¿Cómo retornar una lista con los primos entre el 1 y el 1000?
+
+
+def Esprimo(num):
+        if num < 2:
+            return False
+        for i in range(2,num):
+            if num%i == 0:
+                return False
+        return True
+
+primos = []
+for x in range(1000):
+    if Esprimo(x):
+        primos.append(x)
+    
+print(primos)        
+        
+
